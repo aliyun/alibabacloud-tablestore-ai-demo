@@ -147,12 +147,12 @@ with gr.Blocks(title="Tablestore 多模态检索 Demo") as demo:
             with gr.Column(scale=8):
                 height_text = "Height from: **{min}** to: **{max}**"
                 height_range_slider = gradio_rangeslider.RangeSlider(label="Height", minimum=0, maximum=1024, step=1, value=(0, 1024))
-                height_range_display = gr.Markdown(value=height_text.format(min=0, max=100))
+                height_range_display = gr.Markdown(value=height_text.format(min=0, max=1024))
                 height_range_slider.change(lambda s: height_text.format(min=int(s[0]), max=int(s[1])), height_range_slider, height_range_display)
             with gr.Column(scale=8):
                 width_text = "Width from: **{min}** to: **{max}**"
                 width_range_slider = gradio_rangeslider.RangeSlider(label="Width", minimum=0, maximum=1024, step=1, value=(0, 1024))
-                width_range_display = gr.Markdown(value=width_text.format(min=0, max=100))
+                width_range_display = gr.Markdown(value=width_text.format(min=0, max=1024))
                 width_range_slider.change(lambda s: width_text.format(min=int(s[0]), max=int(s[1])), width_range_slider, width_range_display)
         with gr.Row():
             query_button = gr.Button(value="query", variant='primary')
